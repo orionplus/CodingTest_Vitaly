@@ -34,13 +34,6 @@ namespace CodingTest_Vitaly
             return vm;
         }
         
-        // GET: api/Customer/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST: api/Customer
         [Route("search")]
         [HttpPost]
@@ -54,12 +47,6 @@ namespace CodingTest_Vitaly
         public CustomerViewModel Save([FromBody] CustomerViewModel model)
         {
             return _customerService.UpdateCustomer(model);
-        }
-
-        // PUT: api/Customer/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
         }
 
         // DELETE: api/ApiWithActions/5

@@ -76,10 +76,6 @@ namespace CodingTest_Vitaly.Controllers
                 {
                     ModelState.Clear();
                 }
-                //else
-                //{
-                //    ModelState.Merge(vm.Messages);
-                //}
             }
             return View(vm);
         }

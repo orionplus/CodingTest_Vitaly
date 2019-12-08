@@ -21,7 +21,7 @@ namespace XUnitTest
             using (var context = new CodingTestDbContext(options))
             {
                 context.Customers.Add(new Customer { CustomerId = 1, FirstName = "John", LastName = "Deacon", Birth = DateTime.Now });
-                context.Customers.Add(new Customer { CustomerId = 2, FirstName = "Bryan", LastName = "May", Birth = DateTime.Now });
+                context.Customers.Add(new Customer { CustomerId = 2, FirstName = "Brian", LastName = "May", Birth = DateTime.Now });
                 context.Customers.Add(new Customer { CustomerId = 3, FirstName = "Roger", LastName = "Taylor", Birth = DateTime.Now });
                 context.SaveChanges();
             }
@@ -46,7 +46,7 @@ namespace XUnitTest
             using (var context = new CodingTestDbContext(options))
             {
                 context.Customers.Add(new Customer { CustomerId = 1, FirstName = "John", LastName = "Deacon", Birth = DateTime.Now });
-                context.Customers.Add(new Customer { CustomerId = 2, FirstName = "Bryan", LastName = "May", Birth = DateTime.Now });
+                context.Customers.Add(new Customer { CustomerId = 2, FirstName = "Brian", LastName = "May", Birth = DateTime.Now });
                 context.Customers.Add(new Customer { CustomerId = 3, FirstName = "Roger", LastName = "Taylor", Birth = DateTime.Now });
                 context.SaveChanges();
             }

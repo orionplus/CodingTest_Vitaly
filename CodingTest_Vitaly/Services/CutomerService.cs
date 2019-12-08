@@ -40,8 +40,6 @@ namespace CodingTest_Vitaly
         }
         public CustomerViewModel UpdateCustomer(CustomerViewModel model)
         {
-            //model.Messages.Clear();
-
             // Ensure the correct category is set
             model.Customer.Category = _dbContext.Categories.Find(model.Customer.Category?.CategoryId);
 
@@ -75,20 +73,10 @@ namespace CodingTest_Vitaly
             catch (ValidationException ex)
             {
                 model.IsValid = false;
-                // Validation errors
-                foreach (KeyValuePair<string, string> item in ex.Data)
-                {
-                    //foreach (var item in errors.ValidationErrors)
-                    {
-                        //model.Messages.AddModelError(item.Key, item.Value);
-                    }
-                }
-
+                // TODO: Validation errors
+                
                 // Set page state
                 SetUIState(model, model.PageMode);
-            }
-            catch (Exception ex)
-            {
             }
             return model;
         }
@@ -132,7 +120,6 @@ namespace CodingTest_Vitaly
             model.IsListAreaVisible = true;
             model.IsSearchAreaVisible = true;
             model.PageMode = Constants.LIST;
-            // model.Messages = new ModelStateDictionary();
 
             model.Categories = _dbContext.Categories.OrderBy(p => p.CategoryName).ToList();
 
@@ -146,7 +133,6 @@ namespace CodingTest_Vitaly
             }
 
             // Add category for 'Search All'
-
             model.SearchCategories.Insert(0,
                 new Category() { CategoryId = 0, CategoryName = "-- Search All Categories --" });
 
